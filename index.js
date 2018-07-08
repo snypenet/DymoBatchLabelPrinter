@@ -3,7 +3,7 @@ const uuid = require("uuid/v4");
 const fs = require("fs");
 const dymo = new Dymo();
 
-let labelContentsData = fs.readFileSync("C:\\Users\\MLC Laptop 2\\Documents\\CreatedLabels\\LabelPrinterData\\data.txt");
+let labelContentsData = fs.readFileSync(".\\datainput\\data.txt");
 let labelContentsDataRows = labelContentsData.toString().split('\r\n');
 let labelContentsTokens = loadDataTokens(labelContentsDataRows);
 let labelDataToPrint = loadData(labelContentsDataRows, labelContentsTokens);
@@ -11,7 +11,7 @@ let labelDataToPrint = loadData(labelContentsDataRows, labelContentsTokens);
 let labelsQueue = [];
 
 for(let i in labelDataToPrint){
-    let labelContents = fs.readFileSync(`C:\\Users\\MLC Laptop 2\\Documents\\CreatedLabels\\${labelDataToPrint[i].LabelName}`).toString().trim().replace(/(\r\n|\n|\r)/g, '');
+    let labelContents = fs.readFileSync(`.\\data\\labels\\${labelDataToPrint[i].LabelName}`).toString().trim().replace(/(\r\n|\n|\r)/g, '');
     let newLabel = labelContents.toString();
     for(let prop in labelDataToPrint[i]){
         let replacer = new RegExp(prop, "g");
