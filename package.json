@@ -1,0 +1,16 @@
+{
+  "name": "nametagprinters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "execute": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dymojs": "^1.1.1",
+    "nw-dialog": "^1.0.7",
+    "uuid": "^3.3.2"
+  }
+}
